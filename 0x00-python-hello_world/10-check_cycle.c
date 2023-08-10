@@ -1,30 +1,24 @@
 #include "lists.h"
-#include <stdio.h>
-#include <unistd.h>
 
-#define MAXLIST 50
-
+/**
+ * check_cycle - check for a cycle in a linked list
+ * @list: head of a link list
+ * Return: 1(Detect a cycle) 0(No cycle)
+ */
 int check_cycle(listint_t *list)
 {
-	int i;
-	char *addresses[MAXLIST];
-	listint_t *current;
+	listint_t *fast, *slow;
 
-	for (i = 0; i < MAXLIST; i++)
-		addresses[i] = NULL;
+	fast = list;
+	slow = list;
 
-	current = list;
-	while (current != NULL)
+	while (fast != NULL && fast->next != NULL)
 	{
-		i = 0;
-		while (addresses[i] != NULL)
-		{
-			if ((char *)current == addresses[i])
-				return (1);
-			i++;
-		}
-		addresses[i] = (char *)current;
-		current = current->next;
+		slow = slow->next;
+		fast = fast->next->next;
+
+		if (slow == fast)
+			return (1);
 	}
 	return (0);
 }
