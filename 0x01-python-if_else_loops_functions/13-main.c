@@ -26,7 +26,8 @@ int main(void)
     printf("-----------------\n");
 
     insert_node(&head, -7);
-    insert_node(&head, 39);
+    insert_node(&head, 5727);
+    insert_node(&head, 27);
 
     print_listint(head);
 
