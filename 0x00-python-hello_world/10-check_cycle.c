@@ -1,13 +1,14 @@
 #include "lists.h"
+#include <stdio.h>
+#include <unistd.h>
 
-#define MAXLIST 20
+#define MAXLIST 50
 
 int check_cycle(listint_t *list)
 {
 	int i;
 	char *addresses[MAXLIST];
 	listint_t *current;
-
 
 	for (i = 0; i < MAXLIST; i++)
 		addresses[i] = NULL;
@@ -20,7 +21,6 @@ int check_cycle(listint_t *list)
 		{
 			if ((char *)current == addresses[i])
 				return (1);
-
 			i++;
 		}
 		addresses[i] = (char *)current;
