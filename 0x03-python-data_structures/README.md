@@ -6,9 +6,10 @@ Which include:
 1) List
 2) Tuples
 3) Dictionary
-4) Set
+4) Set etc
 
 **Learning Objectives**
+
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 ***General***
