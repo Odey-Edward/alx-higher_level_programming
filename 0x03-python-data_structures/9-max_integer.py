@@ -6,4 +6,4 @@ def max_integer(my_list=[]):
     for i in my_list:
         if max_nu < i:
             max_nu = i
-    return (max_nu)
+    return ("{:d}".format(max_nu))
