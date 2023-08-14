@@ -10,3 +10,8 @@ matrix = [
 print_matrix_integer(matrix)
 print("--")
 print_matrix_integer()
+print()
+if 1 == 1:
+    v = "you can assign after an if"
+
+print(v)
