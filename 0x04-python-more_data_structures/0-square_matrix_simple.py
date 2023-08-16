@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    squared_matrix = matrix.copy()
+    squared_matrix = []
 
-    for i in range(len(matrix)):
-        squared_matrix[i] = list(map(lambda x: x ** 2, matrix[i]))
+    for value in matrix:
+        squared_matrix.append([x ** 2 for x in value])
     return (squared_matrix)
