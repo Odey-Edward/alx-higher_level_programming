@@ -2,5 +2,5 @@
 def square_matrix_simple(matrix=[]):
     squared_matrix = []
     for list_ in matrix:
-       squared_matrix.append(list( map((lambda x: x ** 2), list_)))
+       squared_matrix.append([i ** 2 for i in list_])
     return (squared_matrix)
