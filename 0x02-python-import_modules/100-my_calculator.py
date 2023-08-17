@@ -2,17 +2,14 @@
 if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     from sys import argv
-
     if len(argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    
-    def switch (argv):
 
+    def switch(argv):
         op = argv[2]
         a = int(argv[1])
         b = int(argv[3])
-
         if op == '+':
             print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
         elif op == '-':
@@ -26,4 +23,3 @@ if __name__ == "__main__":
             exit(1)
 
     switch(argv)
-
