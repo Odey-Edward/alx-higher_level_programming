@@ -29,7 +29,10 @@ def roman_to_int(roman_string):
                         if roman_dict[key] == prev_key:
                             result = result + roman_dict[key]
                         elif roman_dict[key] > prev_key:
-                            result = roman_dict[key] - result
+                            if roman_dict[key] == 5 or roman_dict[key] == 10:
+                                result = result + (roman_dict[key] - 2)
+                            else:
+                                result = roman_dict[key] - result
                         elif prev_key > roman_dict[key]:
                             result = result + roman_dict[key]
                     # Handle iteration on the first index
