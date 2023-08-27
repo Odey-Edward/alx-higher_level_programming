@@ -1,54 +1,30 @@
 #include "lists.h"
 
 /**
- * pop - remove the last node from a listint_t
- * singly linked list
- * @head: pionter to the first node in a listint_t
- * singly linked list
- * Return: the last node removed
+ * palindrome_recursive - check for palindrome in a recursive manner.
+ * @head: pointer to the first node of a listint_t list, passed by
+ * value.
+ * @head2: the same as @head but passed by reference
+ * Description: check if a listint_t singly linked list read the
+ * the same forward as its backward.
+ * Helper function to is_palindrome.
+ * Return: 1 (True) 0 (False)
  */
-listint_t *pop(listint_t **head)
+int palindrome_recursive(listint_t *head, listint_t **head2)
 {
-	listint_t *current, *last;
+	int result;
 
-	if (!(*head))
-		return (NULL);
+	if (head == NULL)
+		return (1);
 
-	last = *head;
+	result = palindrome_recursive(head->next, head2);
 
-	while (last->next)
-	{
-		current = last;
-		last = last->next;
-	}
+	if (head->n != (*head2)->n)
+		return (0);
 
-	if (current)
-		current->next = NULL;
+	*head2 = (*head2)->next;
 
-	return (last);
-}
-
-/**
- * add_last - creat a linked list of node romoved from the
- * the end of a listint_t linked list.
- * @last_head: pointer to the first node of all last node
- * in a listint_t linked list.
- * @last: the node to add to the list of last node
- * Return: @last_head
- */
-listint_t *add_last(listint_t **last_head, listint_t *last)
-{
-	if (!(*last_head))
-	{
-		*last_head = last;
-		return (*last_head);
-	}
-
-	last->next = *last_head;
-	*last_head = last;
-
-	return (*last_head);
-
+	return (result);
 }
 
 /**
@@ -58,32 +34,8 @@ listint_t *add_last(listint_t **last_head, listint_t *last)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *last, *last_head = NULL;
-
-	if (!(*head))
-		return (1);
+	listint_t *current;
 
 	current = *head;
-	while (current->next)
-	{
-		last = pop(head);
-		if (last->n != current->n)
-		{
-			last_head = add_last(&last_head, last);
-			for (; current->next; )
-				current = current->next;
-
-			current->next = last_head;
-			return (0);
-		}
-
-		last_head = add_last(&last_head, last);
-		if (!current->next)
-			break;
-
-		current = current->next;
-	}
-
-	current->next = last_head;
-	return (1);
+	return (palindrome_recursive(*head, &current));
 }
