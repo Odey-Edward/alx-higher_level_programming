@@ -1,5 +1,6 @@
 #!/usr/bin/python3
+''' creating a class '''
 
 class Square:
-    ''' this class has no attribute '''
+    ''' create a square class with no attribute '''
     pass
