@@ -3,6 +3,7 @@
 
 
 class Node:
+    '''Defining the Node Class'''
 
     def __init__(self, data, next_node=None):
         '''Initializes attributes for the Node class
@@ -23,7 +24,8 @@ class Node:
     def data(self, value):
         ''' set the data of a node
         Args:
-            value (int): the value assigned to the data attribute'''
+            value (int): the value assigned to the data attribute
+        '''
         if type(value) != int:
             raise TypeError("data must be an integer")
 
@@ -58,7 +60,8 @@ class SinglyLinkedList:
         a sorted order
 
         Args:
-            value (int): data assigned to the new node'''
+            value (int): data assigned to the new node
+        '''
         new = Node(value)
 
         if self.__head is None:
