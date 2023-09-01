@@ -1,37 +1,45 @@
 #!/usr/bin/python3
 """ defines a node of a singly linked list """
 
+
 class Node:
 
     def __init__(self, data, next_node=None):
+        '''Initializes attributes for the Node class
+        Args:
+            data (int): value to assign to the data attribute
+            next_node (Node): reference to the next node of a singly
+            linked list
+        '''
         self.data = data
         self.next_node = next_node
-
 
     @property
     def data(self):
         ''' retrieve data '''
         return (self.__data)
 
-
     @data.setter
     def data(self, value):
-        ''' set the data '''
+        ''' set the data of a node
+        Args:
+            value (int): the value assigned to the data attribute'''
         if type(value) != int:
             raise TypeError("data must be an integer")
 
         self.__data = value
-
 
     @property
     def next_node(self):
         ''' retrieve next node '''
         return (self.__next_node)
 
-
     @next_node.setter
     def next_node(self, value):
-        ''' set the next node '''
+        ''' set the next node
+        Args:
+            value (Node): the next Node Object
+        '''
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
 
@@ -42,10 +50,15 @@ class SinglyLinkedList:
     ''' defines a singly linked list '''
 
     def __init__(self):
+        ''' The singlyLinkedList initialization method '''
         self.__head = None
 
-
     def sorted_insert(self, value):
+        '''method for insecting element in a linked list in
+        a sorted order
+
+        Args:
+            value (int): data assigned to the new node'''
         new = Node(value)
 
         if self.__head is None:
@@ -62,24 +75,11 @@ class SinglyLinkedList:
             tmp.next_node = new
 
     def __str__(self):
+        '''This method defines how the class is represented when
+        printed'''
         values = []
         tmp = self.__head
         while tmp is not None:
             values.append(str(tmp.data))
             tmp = tmp.next_node
         return ('\n'.join(values))
-
-
-sll = SinglyLinkedList()
-sll.sorted_insert(2)
-sll.sorted_insert(5)
-sll.sorted_insert(3)
-sll.sorted_insert(10)
-sll.sorted_insert(1)
-sll.sorted_insert(-4)
-sll.sorted_insert(-3)
-sll.sorted_insert(4)
-sll.sorted_insert(5)
-sll.sorted_insert(12)
-sll.sorted_insert(3)
-print(sll)
