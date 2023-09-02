@@ -61,7 +61,7 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
-        '''prints in stdout the square with the character #'''
+        '''prints in stdout the square with the character'''
 
         if self.__size == 0:
             print()
@@ -74,6 +74,7 @@ class Square:
 
     def __str__(self):
         '''define the string representation of the object when printed'''
+
         value = []
         if self.__size == 0:
             value.append("")
