@@ -84,7 +84,6 @@ class Square:
             for i in range(self.__size):
                 s1 = " " * self.__position[0]
                 s2 = "#" * self.__size
-
                 value.append(s1 + s2)
 
         return("\n".join(value))
