@@ -8,8 +8,8 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         ''' Initializing an object attribute
         Args:
-            size(int): private instance attribute
-            position(tuple): tuple of 2 positive integers
+            size (int): private instance attribute
+            position (tuple): tuple of 2 positive integers
         '''
         if type(position) != tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -32,7 +32,7 @@ class Square:
     def size(self, value):
         ''' setter function to set the size of a squnare instance
         Args:
-            value(int): positive integer'''
+            value (int): positive integer'''
 
         if type(value) != int:
             raise TypeError("size must be an integer")
@@ -49,11 +49,10 @@ class Square:
     def position(self, value):
         ''' setter function to set the position of a squnare instance
         Args:
-            value(tuple): tuple of 2 positive integers'''
+            value (tuple): tuple of 2 positive integers
+        '''
 
         p1, p2 = value
-        if p1 < 0 or p2 < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = p1, p2
 
     def area(self):
@@ -85,5 +84,4 @@ class Square:
                 s1 = " " * self.__position[0]
                 s2 = "#" * self.__size
                 value.append(s1 + s2)
-
         return("\n".join(value))
