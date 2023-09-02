@@ -32,8 +32,8 @@ class Square:
     def size(self, value):
         ''' setter function to set the size of a squnare instance
         Args:
-            value (int): positive integer'''
-
+            value (int): positive integer
+        '''
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -60,7 +60,7 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
-        '''prints in stdout the square with the character'''
+        '''prints in stdout the square with the character # '''
 
         if self.__size == 0:
             print()
@@ -73,7 +73,6 @@ class Square:
 
     def __str__(self):
         '''define the string representation of the object when printed'''
-
         value = []
         if self.__size == 0:
             value.append("")
