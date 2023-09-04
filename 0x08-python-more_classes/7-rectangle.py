@@ -44,7 +44,6 @@ class Rectangle:
 
         self.__height = value
 
-
     def area(self):
         """return the area of a rectangle"""
         return (self.__height * self.__width)
