@@ -29,6 +29,10 @@ def roman_to_int(roman_string):
                         if roman_dict[key] == prev_key:
                             result = result + roman_dict[key]
                         elif roman_dict[key] > prev_key:
+                            '''
+                            add values when current roman key is greater then
+                            the previous key values and it is 5 or 10
+                            '''
                             if roman_dict[key] == 5 or roman_dict[key] == 10:
                                 result = result + (roman_dict[key] - 2)
                             else:
