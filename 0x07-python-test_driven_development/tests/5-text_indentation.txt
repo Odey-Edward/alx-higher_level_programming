@@ -1,0 +1,25 @@
+Test file for 5-text_indentation module
+--------------------------------------
+
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+>>> text_indentation("strin?string:string")
+strin
+<BLANKLINE>
+string
+<BLANKLINE>
+string
+>>> text_indentation("123")
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+>>> text_indentation("-da")
+-da
+>>> text_indentation(3.333)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
