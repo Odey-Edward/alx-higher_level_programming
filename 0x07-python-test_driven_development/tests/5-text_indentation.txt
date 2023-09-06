@@ -7,10 +7,10 @@ Test file for 5-text_indentation module
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
->>> text_indentation("strin?string:string")
-strin
+>>> text_indentation("string?string:string")
+string?
 <BLANKLINE>
-string
+string:
 <BLANKLINE>
 string
 >>> text_indentation("123")
@@ -23,3 +23,12 @@ TypeError: text must be a string
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
+
+>>> text_indentation("Holberton. School? How are you:    John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John

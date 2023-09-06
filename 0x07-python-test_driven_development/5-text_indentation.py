@@ -15,12 +15,14 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     if any(ch.isdigit() for ch in text):
         raise TypeError("text must be a string")
+
     for i in range(len(text)):
         if text[i] in ['.', '?', ':']:
             print(text[i])
             print()
+        elif text[i].isspace() and text[i - 1] in ['.', '?', ':']:
+            continue
+        elif text[i].isspace() and text[i - 1].isspace():
+            continue
         else:
-            if text[i - 1] in ['.', '?', ':']:
-                if text[i].isspace():
-                    continue
             print("{}".format(text[i]), end='')
