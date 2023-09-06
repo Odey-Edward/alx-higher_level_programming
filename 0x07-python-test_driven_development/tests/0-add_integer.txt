@@ -29,3 +29,7 @@ Traceback (most recent call last):
 TypeError: b must be an integer
 >>> add_integer(float('inf'), 0)
 89
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
