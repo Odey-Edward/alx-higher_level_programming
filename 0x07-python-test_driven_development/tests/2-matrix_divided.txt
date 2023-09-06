@@ -56,3 +56,6 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 ...
 TypeError: div must be a number
+
+>>> matrix_divided([[1, 2], [3.3, -2]], float('inf'))
+[[0.0, 0.0], [0.0, -0.0]]
