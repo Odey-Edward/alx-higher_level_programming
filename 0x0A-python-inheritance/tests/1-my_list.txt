@@ -36,3 +36,6 @@ print a sorted list with "-4" at the first index
 check if my_list was modified
 >>> my_list
 [1, 4, 2, -4, 5]
+
+>>> issubclass(my_list, list)
+True
