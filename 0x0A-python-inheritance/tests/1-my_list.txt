@@ -37,5 +37,6 @@ check if my_list was modified
 >>> my_list
 [1, 4, 2, -4, 5]
 
->>> issubclass(my_list, list)
+check if MyList is a subclass of the list class
+>>> issubclass(MyList, list)
 True
