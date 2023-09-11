@@ -40,3 +40,9 @@ check if my_list was modified
 check if MyList is a subclass of the list class
 >>> issubclass(MyList, list)
 True
+
+Checking for too many arguments:
+>>> my_list.print_sorted(1)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
