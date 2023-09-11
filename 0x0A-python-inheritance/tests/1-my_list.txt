@@ -1,0 +1,38 @@
+MyList class test file
+.......................
+
+import the My_list class
+>>> MyList = __import__('1-my_list').MyList
+
+creat an instance of Mylist class
+>>> my_list = MyList()
+
+initialise values to the list
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+
+print the list
+>>> my_list
+[1, 4, 2, 3, 5]
+
+print a sorted list
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+check if the list was modified
+>>> my_list
+[1, 4, 2, 3, 5]
+
+reassign the value with the index position "3" to "-4"
+>>> my_list[3] = -4
+
+print a sorted list with "-4" at the first index
+>>> my_list.print_sorted()
+[-4, 1, 2, 4, 5]
+
+check if my_list was modified
+>>> my_list
+[1, 4, 2, -4, 5]
