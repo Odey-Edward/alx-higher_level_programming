@@ -1,0 +1,27 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> g = BaseGeometry()
+>>> g.integer_validator("se", 3)
+>>> g.integer_validator("se", None)
+Traceback (most recent call last):
+...
+TypeError: se must be an integer
+
+>>> g.integer_validator("se", float("inf"))
+Traceback (most recent call last):
+...
+TypeError: se must be an integer
+
+>>> g.integer_validator("se", -float("inf"))
+Traceback (most recent call last):
+...
+TypeError: se must be an integer
+
+>>> g.integer_validator("se", -4)
+Traceback (most recent call last):
+...
+ValueError: se must be greater than 0
+
+>>> g.integer_validator("se", 0)
+Traceback (most recent call last):
+...
+ValueError: se must be greater than 0
