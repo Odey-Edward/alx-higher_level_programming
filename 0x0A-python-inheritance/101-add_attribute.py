@@ -5,7 +5,7 @@
 def add_attribute(obj, name, value):
     """ function that adds a new attribute to an object"""
 
-    if isinstance(obj, (str, tuple, int)):
+    if isinstance(obj, (str, tuple, int, float)):
         raise TypeError("can't add new attribute")
 
     setattr(obj, name, value)
