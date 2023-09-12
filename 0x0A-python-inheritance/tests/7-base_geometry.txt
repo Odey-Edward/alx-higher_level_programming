@@ -25,3 +25,43 @@ ValueError: se must be greater than 0
 Traceback (most recent call last):
 ...
 ValueError: se must be greater than 0
+
+>>> g.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> g.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> g.integer_validator("name")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> g.integer_validator("name", "4")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", (4,))
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", [6])
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", True)
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", {3, 5})
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
