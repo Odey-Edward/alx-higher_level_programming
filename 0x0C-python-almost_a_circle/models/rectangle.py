@@ -25,6 +25,12 @@ class Rectangle(Base):
     def width(self, value):
         """setter method for the private
         instance attribute width"""
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+
+        if value <= 0:
+            raise TypeError("width must be > 0")
+
         self.__width = value
 
     @property
@@ -37,6 +43,12 @@ class Rectangle(Base):
     def height(self, value):
         """setter method for the private
         instance attribute height"""
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+
+        if value <= 0:
+            raise TypeError("height must be > 0")
+
         self.__height = value
 
     @property
@@ -49,6 +61,12 @@ class Rectangle(Base):
     def x(self, value):
         """setter method for the private
         instanceattribute x"""
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+
+        if value < 0:
+            raise TypeError("x must be >= 0")
+
         self.__x = value
 
     @property
@@ -61,4 +79,9 @@ class Rectangle(Base):
     def y(self, value):
         """setter method for the provate
         instance attribute y"""
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+
+        if value < 0:
+            raise TypeError("y must be >= 0")
         self.__y = value
