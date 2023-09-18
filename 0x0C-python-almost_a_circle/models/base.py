@@ -44,9 +44,25 @@ class Base:
         return ([])
 
     @classmethod
-    """that returns an instance with all attributes already set"""
     def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
         if dictionary:
             new = cls(1, 1)
             new.update(**dictionary)
             return (new)
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        value = []
+        try:
+            with open(filename, "r") as f:
+                instances = cls.from_json_string(f.read())
+        except FileNotFoundError:
+            return (value)
+
+        for inst in instances:
+            value.append(cls.create(**inst))
+
+        return (value)
