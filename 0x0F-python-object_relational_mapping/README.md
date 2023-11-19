@@ -10,7 +10,7 @@
 **Before you start…** 
 Please make sure your MySQL server is in 8.0
 
-**Background Contextk**  
+**Background Context**  
 In this project, you will link two amazing worlds: Databases and Python!
 
 In the first part, you will use the module MySQLdb to connect to a MySQL database and execute your SQL queries.
@@ -44,3 +44,5 @@ Do you see the difference? Cool, right?
 The biggest difficulty with ORM is: The syntax!  
 
 Indeed, all of them have the same type of syntax, but not always. Please read tutorials and don’t read the entire documentation before starting, just jump on it if you don’t get something.
+
+Happy engineering from EDWARD himself :)
