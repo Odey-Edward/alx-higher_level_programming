@@ -18,7 +18,7 @@ if __name__ == "__main__":
     SELECT * FROM states
     WHERE name LIKE BINARY '{}'
     ORDER BY id ASC
-    """.format(sys.argv[4]).strip("'")
+    """.format(sys.argv[4])
     )
 
     for state in cur.fetchall():
