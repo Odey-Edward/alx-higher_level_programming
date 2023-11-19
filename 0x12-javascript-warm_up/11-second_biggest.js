@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const argv = process.argv;
 const args = argv.slice(2);
 let high = 0;
 let secondHigh = 0;
