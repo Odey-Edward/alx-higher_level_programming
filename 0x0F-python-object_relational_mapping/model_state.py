@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 class definition of a State which is mapped to the
 mysql state table
