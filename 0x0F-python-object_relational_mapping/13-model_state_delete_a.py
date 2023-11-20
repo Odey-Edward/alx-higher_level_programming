@@ -13,13 +13,14 @@ if __name__ == '__main__':
             'mysql+mysqldb://{}:{}@localhost/{}'
             .format(argv[1], argv[2], argv[3])
             )
+
     Base.metadata.create_all(conn)
     session_maker = sessionmaker(bind=conn)
     session = session_maker()
 
-    for state in session.query(State).all():
-        if 'a' in state.name:
-            session.delete(state)
+    states = session.query(State).filter(State.name.like('%a%')).all()
+    for state in states:
+        session.delete(state)
 
     session.commit()
     session.close()
