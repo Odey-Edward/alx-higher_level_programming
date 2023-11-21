@@ -8,7 +8,8 @@ from relationship_state import Base, State
 
 
 class City(Base):
-  """Represents a city for a MySQL database.
+    """
+     Represents a city for a MySQL database.
 
     Attributes:
         id (sqlalchemy.Column): The city's id.
