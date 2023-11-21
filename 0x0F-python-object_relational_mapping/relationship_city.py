@@ -8,18 +8,12 @@ from relationship_state import Base, State
 
 
 class City(Base):
-    """
-    City class: inherits from Base (imported from model_state)
-    links to the MySQL table cities
+  """Represents a city for a MySQL database.
 
-    class attribute id that represents a column of an auto-generated,
-    unique integer, can’t be null and is a primary key
-
-    class attribute name that represents a column of a
-    string of 128 characters and can’t be null
-
-    class attribute state_id that represents a column of an integer,
-    can’t be null and is a foreign key to states.id
+    Attributes:
+        id (sqlalchemy.Column): The city's id.
+        name (sqlalchemy.Column): The city's name.
+        state_id (sqlalchemy.Column): The city's state id.
     """
 
     __tablename__ = 'cities'
