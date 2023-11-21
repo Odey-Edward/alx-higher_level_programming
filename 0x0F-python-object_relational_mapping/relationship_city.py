@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-contains the class definition of a City
+Defines a City model.
+Inherits from SQLAlchemy Base and links to the MySQL table cities.
 """
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base, State
