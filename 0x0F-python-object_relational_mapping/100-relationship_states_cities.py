@@ -9,20 +9,21 @@ from relationship_state import State, Base
 from relationship_city import City
 from sqlalchemy.orm import sessionmaker
 
-conn = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'.
-        format(argv[1], argv[2], argv[3], pool_pre_ping=True)
-)
+if __name__ == '__main__':
+    conn = create_engine(
+            'mysql+mysqldb://{}:{}@localhost/{}'.
+            format(argv[1], argv[2], argv[3], pool_pre_ping=True)
+    )
 
-Base.metadata.create_all(conn)
-Session = sessionmaker(bind=conn)
-session = Session()
+    Base.metadata.create_all(conn)
+    Session = sessionmaker(bind=conn)
+    session = Session()
 
-stateObj = State(name='California')
-cityObj = City(name='San Francisco', state=stateObj)
+    stateObj = State(name='California')
+    cityObj = City(name='San Francisco', state=stateObj)
 
-session.add(stateObj)
-session.add(cityObj)
-session.commit()
+    session.add(stateObj)
+    session.add(cityObj)
+    session.commit()
 
-session.close()
+    session.close()
