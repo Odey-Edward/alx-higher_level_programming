@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     array = response.json()
 
-    for i in range(11):
+    for i in range(10):
         print(
             array[i].get('sha') + ': '
-            + array[i].get('commit')['committer']['name'])
+            + array[i].get('commit')['author']['name'])
