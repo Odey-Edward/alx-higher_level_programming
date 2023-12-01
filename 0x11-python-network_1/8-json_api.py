@@ -18,7 +18,7 @@ if __name__ == '__main__':
         res = requests.post('http://0.0.0.0:5000/search_user', data=values)
         json_body = res.json()
 
-        if not json_body:
+        if json_body == {}:
             print('No result')
         else:
             print('{[]} {}'.format(json_body.get('id'), json_body.get('name')))
