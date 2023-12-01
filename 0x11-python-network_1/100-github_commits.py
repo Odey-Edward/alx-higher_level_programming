@@ -8,13 +8,8 @@ import requests
 if __name__ == '__main__':
     url = 'https://api.github.com/repos/'\
             + argv[2] + '/' + argv[1] + '/commits'
-    header = {
-            "Accept": "application/vnd.github+json",
-            "Authorization": argv[2],
-            "X-GitHub-Api-Version": "2022-11-28"
-            }
 
-    response = requests.get(url, headers=header)
+    response = requests.get(url)
 
     array = response.json()
 
