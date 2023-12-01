@@ -7,13 +7,9 @@ from sys import argv
 import requests
 
 if __name__ == '__main__':
-    values = {}
+    ch = "" if len(argv) == 1 else argv[1]
 
-    if len(argv) == 1:
-        values['q'] = ""
-    else:
-        values['q'] = argv[1]
-
+    values = {'q': ch}
     try:
         res = requests.post('http://0.0.0.0:5000/search_user', data=values)
         json_body = res.json()
