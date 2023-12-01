@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """function find_peak"""
 
+
 def find_peak(list_of_integers):
+    """find peak in a list of unsorted integers"""
     if not list_of_integers:
         return
 
@@ -10,10 +12,11 @@ def find_peak(list_of_integers):
 
     return recursive(0, len(list_of_integers) - 1, list_of_integers)
 
-def recursive(start, end, list_items):
 
+def recursive(start, end, list_items):
+    """healper function to find_peak"""
     if start >= end:
-            return 0
+        return 0
 
     _len = end / 2
 
@@ -24,5 +27,3 @@ def recursive(start, end, list_items):
         return value1
 
     return value2
-
-
