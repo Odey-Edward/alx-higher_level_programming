@@ -21,4 +21,4 @@ if __name__ == '__main__':
     for i in range(11):
         print(
             array[i].get('sha') + ': '
-            + array[i].get('commit')['author']['name'])
+            + array[i].get('commit')['committer']['name'])
