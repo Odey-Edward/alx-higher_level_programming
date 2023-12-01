@@ -13,7 +13,10 @@ if __name__ == '__main__':
 
     array = response.json()
 
-    for i in range(10):
-        print(
-            array[i].get('sha') + ': '
-            + array[i].get('commit')['author']['name'])
+    try:
+        for i in range(10):
+            print(
+                array[i].get('sha') + ': '
+                + array[i].get('commit')['author']['name'])
+    except IndexError:
+        pass
